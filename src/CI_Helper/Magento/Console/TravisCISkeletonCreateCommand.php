@@ -58,6 +58,13 @@ env:
   - MAGENTO=1.8.1.0
   - MAGENTO=1.9.1.0
   - MAGENTO=2.0.42.0-beta10
+matrix:
+  fast_finish: true
+  include:
+    - php: 5.6
+      env: TEST_SUITE=Static
+  allow_failures:
+    - env: TEST_SUITE=Static
 before_install:
   - mkdir test-root/
 install:
@@ -65,7 +72,12 @@ install:
 before_script:
   - php vendor/bin/cotya-setup_travis.php
 script:
-  - vendor/bin/phpunit
+  - > 
+    sh -c "if [ '$TEST_SUITE' = 'Static' ]; then
+      ./vendor/bin/phpcs -v --standard=PSR2 --ignore="/test-root|/lib|/shell|/vendor|/m1" ./;
+    else
+      vendor/bin/phpunit
+    fi"
 
 YAML;
         return $template;

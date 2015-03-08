@@ -11,6 +11,10 @@
     "autoload": {
         "psr-4": { "Cotya\\CI_Helper\\": "src/CI_Helper/" }
     },
+    "bin": [
+        "bin/cotya-ci-helper.php",
+        "bin/cotya-setup_travis.php"
+    ],
     "authors": [
         {
             "name": "Flyingmana",

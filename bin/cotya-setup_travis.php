@@ -32,7 +32,7 @@ if (strpos($magentoTargetVersion, '1.')===0) {
     $passthru('composer install --no-interaction --dev');
 
     chdir($moduleRoot);
-    $moduleName = simplexml_load_file('etc/module.xml')->xpath('module')[0]->getName();
+    $moduleName = simplexml_load_file($moduleRoot.'/etc/module.xml')->xpath('module')[0]->getName();
     $moduleDir = str_replace('_', DIRECTORY_SEPARATOR, $moduleName);
     $passthru('cp -s ./ ./test-root/app/code/'.$moduleDir);
     

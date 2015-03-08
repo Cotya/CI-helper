@@ -6,6 +6,9 @@
  *
  */
 
+if (getenv('TEST_SUITE') == 'Static') {
+    exit();
+}
 
 $magentoTargetVersion = getenv('MAGENTO');
 $moduleRoot = realpath(__DIR__.'/../../../../');

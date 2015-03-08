@@ -1,0 +1,20 @@
+{
+    "name": "cotya/ci-helper",
+    "description": "some scripts and tools making setting up a CI environment easier",
+    "require": {
+        "symfony/console": "~2.6",
+        "firegento/mage-ci": "master-dev",
+        "psr/log": "~1.0",
+        "symfony/process": "~2.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": { "Cotya\\CI_Helper\\": "src/CI_Helper/" }
+    },
+    "authors": [
+        {
+            "name": "Flyingmana",
+            "email": "flyingmana@googlemail.com"
+        }
+    ]
+}

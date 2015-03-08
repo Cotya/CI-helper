@@ -63,7 +63,7 @@ before_install:
 install:
   - composer install --dev
 before_script:
-  - php bin/cotya-setup_travis.php
+  - php vendor/bin/cotya-setup_travis.php
 script:
   - vendor/bin/phpunit
 

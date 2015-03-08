@@ -8,7 +8,7 @@
 
 
 $magentoTargetVersion = getenv('MAGENTO');
-$moduleRoot = realpath(__DIR__.'/../../');
+$moduleRoot = realpath(__DIR__.'/../../../../');
 
 echo "moduleRoot: $moduleRoot";
 
